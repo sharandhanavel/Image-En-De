@@ -1,19 +1,19 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import random
 
-def encrypt_image(image, key):
-    encrypted_image = np.zeros(image.shape, dtype=int)
-    for i in range(image.shape[0]):
-        for j in range(image.shape[1]):
+def encrypt_image(img, key):
+    rows, cols, _ = img.shape
+    encrypted_img = np.zeros_like(img, dtype=int)
+    for i in range(rows):
+        for j in range(cols):
             for k in range(3):
-                encrypted_image[i][j][k] = key[image[i][j][k]]
-    return encrypted_image
+                encrypted_img[i][j][k] = key[img[i][j][k]]
+    return encrypted_img
 
-def decrypt_image(encrypted_image, key):
-    decrypted_image = np.zeros(encrypted_image.shape, dtype=int)
-    for i in range(encrypted_image.shape[0]):
-        for j in range(encrypted_image.shape[1]):
+def decrypt_image(encrypted_img, key):
+    rows, cols, _ = encrypted_img.shape
+    decrypted_img = np.zeros_like(encrypted_img, dtype=int)
+    for i in range(rows):
+        for j in range(cols):
             for k in range(3):
-                decrypted_image[i][j][k] = key.index(encrypted_image[i][j][k])
-    return decrypted_image
+                decrypted_img[i][j][k] = key.index(encrypted_img[i][j][k])
+    return decrypted_img
