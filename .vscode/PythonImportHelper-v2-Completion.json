@@ -71,28 +71,28 @@
     {
         "label": "encrypt_image",
         "kind": 2,
-        "importPath": "image_encryption",
-        "description": "image_encryption",
+        "importPath": "Source Code.image_encryption",
+        "description": "Source Code.image_encryption",
         "peekOfCode": "def encrypt_image(img, key):\n    rows, cols, _ = img.shape\n    encrypted_img = np.zeros_like(img, dtype=int)\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(3):\n                encrypted_img[i][j][k] = key[img[i][j][k]]\n    return encrypted_img\ndef decrypt_image(encrypted_img, key):\n    rows, cols, _ = encrypted_img.shape",
-        "detail": "image_encryption",
+        "detail": "Source Code.image_encryption",
         "documentation": {}
     },
     {
         "label": "decrypt_image",
         "kind": 2,
-        "importPath": "image_encryption",
-        "description": "image_encryption",
+        "importPath": "Source Code.image_encryption",
+        "description": "Source Code.image_encryption",
         "peekOfCode": "def decrypt_image(encrypted_img, key):\n    rows, cols, _ = encrypted_img.shape\n    decrypted_img = np.zeros_like(encrypted_img, dtype=int)\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(3):\n                decrypted_img[i][j][k] = key.index(encrypted_img[i][j][k])\n    return decrypted_img",
-        "detail": "image_encryption",
+        "detail": "Source Code.image_encryption",
         "documentation": {}
     },
     {
         "label": "ImageEncryptionApp",
         "kind": 6,
-        "importPath": "main",
-        "description": "main",
+        "importPath": "Source Code.main",
+        "description": "Source Code.main",
         "peekOfCode": "class ImageEncryptionApp(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"Image Encryption & Decryption\")\n        self.img_label = tk.Label(self, text=\"Selected Image\")\n        self.img_label.grid(row=0, column=0, columnspan=2, pady=10)\n        self.canvas = tk.Canvas(self, width=400, height=400)\n        self.canvas.grid(row=1, column=0, columnspan=2)\n        self.select_button = tk.Button(self, text=\"Select Image\", command=self.choose_file)\n        self.select_button.grid(row=2, column=0, padx=10, pady=10)",
-        "detail": "main",
+        "detail": "Source Code.main",
         "documentation": {}
     }
 ]
